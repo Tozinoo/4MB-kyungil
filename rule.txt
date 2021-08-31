@@ -1,4 +1,4 @@
-Branch 각자 작업 한 것들 Push
+Branch 각자 작업 한 것들 Push 
 LEE 
 NOH 
 YANG 
@@ -6,4 +6,4 @@ CHOI
 
 main_test 코드 병합 테스트
 
-main 호스팅 페이지
+main 호스팅 페이지1
