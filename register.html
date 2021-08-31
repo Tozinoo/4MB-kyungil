@@ -6,12 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="styles/register.css" />
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
     <body>
         <!-- register  -->
         <form name="form" method="post">
             <div class="register-container">
-                <div id="register-logo">
+                <div id="register-user">
                     <img src="images/LOGO.png" alt="LOGO" />
                     <p><h2>SurFaty 회원가입</h2></p>
                 </div>
@@ -22,11 +25,11 @@
 
                     <strong class="register-tf">아이디</strong>
                     <div class="register-subtitle">
-                        <label for="logo_id" class="register-lab"></label>
+                        <label for="user_id" class="register-lab"></label>
                         <input
                             class="register-input"
                             type="text"
-                            id="logo_id"
+                            id="user_id"
                             placeholder="아이디 입력"
                             name="userId"
                         />
@@ -43,11 +46,11 @@
 
                     <strong class="register-tf">비밀번호</strong>
                     <div class="register-subtitle">
-                        <label for="logo_pwd" class="register-lab"></label>
+                        <label for="user_pwd" class="register-lab"></label>
                         <input
                             class="register-input"
                             type="password"
-                            id="logo_pwd"
+                            id="user_pwd"
                             placeholder="비밀번호 입력 (8~16자리)"
                             name="userPwd"
                         />
@@ -55,21 +58,51 @@
                         <input
                             class="register-input"
                             type="password"
-                            id="logo_confirmPwd"
+                            id="user_confirmPwd"
                             placeholder="비밀번호 재입력"
                             name="confirmUserPwd"
                         />
-                        <div class='register-error-msg'></div>
+                        <div style="height: 15px;"></div>
                         <div class="register-util"></div>
+                    </div>
+
+                    <strong class="register-tf">이름</strong>
+                    <div class="register-subtitle">
+                        <label for="user_name" class="register-lab"></label>
+                        <input
+                            class="register-input"
+                            type="text"
+                            id="user_name"
+                            placeholder="이름 입력"
+                            name="userName"
+                        />
+                        <div class='register-error-msg'></div>
+                        <div class="register-util">
+                        </div>
+                    </div>
+
+                    <strong class="register-tf">생년월일</strong>
+                    <div class="register-subtitle">
+                        <label for="user_date" class="register-lab"></label>
+                        <input
+                            class="register-input date"
+                            type="text"
+                            id="user_date"
+                            placeholder="생년월일"
+                            name="userDate"
+                        />
+                        <div class='register-error-msg'></div>
+                        <div class="register-util">
+                        </div>
                     </div>
 
                     <strong class="register-tf">전화번호</strong>
                     <div class="register-subtitle">
-                        <label for="logo_tel" class="register-lab"></label>
+                        <label for="user_tel" class="register-lab"></label>
                         <input
                             class="register-input"
                             type="tel"
-                            id="logo_tel"
+                            id="user_tel"
                             placeholder="전화번호 입력"
                             name="userTel"
                         />
@@ -88,11 +121,11 @@
 
                     <strong class="register-tf">이메일</strong>
                     <div class="register-subtitle">
-                        <label for="logo_mail" class="register-lab"></label>
+                        <label for="user_mail" class="register-lab"></label>
                         <input
                             class="register-input"
                             type="email"
-                            id="logo_mail"
+                            id="user_mail"
                             placeholder="이메일 입력"
                             name="userMail"
                         />
@@ -107,26 +140,21 @@
                         </div>
                     </div>
 
-                    <strong class="register-tf">닉네임</strong>
+                    <strong class="register-tf">성별</strong>
                     <div class="register-subtitle">
-                        <label for="logo_nickname" class="register-lab"></label>
+                        <label for="user_sex" class="register-lab"></label>
                         <input
                             class="register-input"
                             type="text"
-                            id="logo_nickName"
-                            placeholder="닉네임 입력"
-                            name="userNick"
+                            id="user_sex"
+                            placeholder="성별"
+                            name="userSex"
                         />
                         <div class='register-error-msg'></div>
                         <div class="register-util">
-                            <button
-                            class="register-btn-input"
-                            onclick="return isDupli()"
-                        >
-                            중복확인
-                        </button>
                         </div>
                     </div>
+                    
                     <div class="register-submit">
                         <button
                             id="submit_all"

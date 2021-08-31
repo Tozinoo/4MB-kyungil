@@ -1,14 +1,19 @@
+.register-tf {
+    color: black;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
 .register-container {
     width: 100%;
     padding: 20px 0;
 }
-#register-logo {
+#register-user {
     width: 580px;
     height: 75px;
     margin: 0 auto;
     text-align: center;
 }
-#register-logo > img {
+#register-user > img {
     width: 75px;
     height: 75px;
 }
@@ -31,15 +36,6 @@
     color: rgb(58, 58, 58);
 }
 
-/* .register-lab {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.lab_g {
-  position: relative;
-} */
-
 .register-subtitle {
     width: 100%;
     font-size: 1em;
@@ -54,31 +50,18 @@
     color: red;
     font-size: 11px;
 }
-/* .register-util {
-  position: absolute;
-  top: 10px;
-  right: 0;
-} */
 
 .register-input {
-    margin-bottom: 3px;
     height: 40px;
     width: 100%;
     display: inline-block;
-}
-.register-input {
-    font-size: 0.8em;
+    font-size: 1em;
     width: 100%;
     border: none;
     border-bottom: 1.5px solid #cccccc;
     line-height: 40px;
-    font-weight: bold;
+    margin-top: 5px;
 }
-/* .register-writing > button {
-  position: ;
-  top: 0;
-  right: 0;
-} */
 
 .register-input:focus {
     outline: none;
@@ -87,6 +70,12 @@
 /* focus됐을 시 placeholder 값 변경 */
 .register-input:focus::placeholder {
     color: transparent;
+}
+.date {
+    width: 140px;
+    text-align: center;
+    border: 2px solid #cccccc;
+    margin-top: 13px;
 }
 .register-subtitle {
     position: relative;

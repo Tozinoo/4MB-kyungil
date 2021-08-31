@@ -13,16 +13,18 @@ const confirmUserPwd = document.getElementById("logo_confirmPwd");
 const userTel = document.getElementById("logo_tel");
 const userMail = document.getElementById("logo_mail");
 const userNick = document.getElementById("logo_nickName");
-const errorMsg = document.querySelector(".register-error-msg");
-//공백확인 함수
+const errorMsg = document.getElementsByClassName("register-error-msg");
 
+// 텍스트 넣기
 function text(elem, text) {
     elem.innerHTML = text;
 }
-function changeBlank() {
-    errorMsg.innerHTML = "";
+// 공백
+function changeBlank(elem) {
+    elem.innerHTML = "";
 }
 
+//공백확인 함수
 function checkValue(value, dataName) {
     // 입력(value)로 들어온 값이 공백("")이면
     if (value == "") {
@@ -35,25 +37,34 @@ function checkValue(value, dataName) {
     return true;
 }
 
+// 생년월일 Date
+$(function () {
+    $("#user_date").datepicker();
+});
+
 function check() {
     // checkID값이 false일 시 return false로 함수 중지
     if (!checkID(userId)) return false;
     borderReturn(userId);
-    changeBlank();
+    changeBlank(errorMsg[0]);
     // 값이 잘 들어가는지 로그를 찍어보자
     console.log("아이디 확인");
     if (!checkPwd(userPwd, confirmUserPwd)) return false;
     borderReturn(userPwd);
     borderReturn(confirmUserPwd);
+    changeBlank(errorMsg[1]);
     console.log("비밀번호 확인");
     if (!checkTel(userTel)) return false;
     borderReturn(userTel);
+    changeBlank(errorMsg[2]);
     console.log("전화번호 확인");
     if (!checkMail(userMail)) return false;
     borderReturn(userMail);
+    changeBlank(errorMsg[3]);
     console.log("메일 확인");
     if (!checkNick(userNick)) return false;
     borderReturn(userNick);
+    changeBlank(errorMsg[4]);
     console.log("닉네임 확인");
     return true;
 }
@@ -72,7 +83,7 @@ function checkID(id) {
     // test 값이 false일 시 실행
     if (!idPattern.test(id.value)) {
         // 경고창 발생
-        text(errorMsg, "6 ~ 16자로 적어주세요.");
+        text(errorMsg[0], "6 ~ 16자로 적어주세요.");
         borderRed(id);
         // value값 초기화
         id.value = "";
@@ -95,8 +106,9 @@ function checkPwd(pwd, confirmPwd) {
 
     // 정규표현식 유효성 검사
     if (!pwPattern.test(pwd.value)) {
-        alert(
-            "비밀번호는 영문 대소문자와 숫자 및 특수문자를 포함한 8~16자리로 입력해야 합니다!"
+        text(
+            errorMsg[1],
+            "영문 대소문자와 숫자 및 특수문자를 포함한 8~16자리로 적어주세요."
         );
         borderRed(pwd);
         pwd.value = "";
@@ -117,8 +129,7 @@ function checkPwd(pwd, confirmPwd) {
 
     // 재입력한 패스워드가 처음 입력한 패스워드와 다를 때 사용하는 함수
     if (pwd.value != confirmPwd.value) {
-        // 경고창
-        alert("비밀번호가 같지 않습니다! 다시 입력해주세요!");
+        text(errorMsg[1], "비밀번호가 같지 않습니다. 다시 입력해주세요.");
         borderRed(pwd);
         borderRed(confirmPwd);
         // value값 초기화
@@ -140,7 +151,7 @@ function checkTel(tel) {
     }
 
     if (!phonePattern.test(tel.value)) {
-        alert("01x-xxxx-xxxx의 형식을 지켜주세요!");
+        text(errorMsg[2], "전화번호 형식을 지켜주세요.");
         borderRed(tel);
         tel.value = "";
         tel.focus();
@@ -156,7 +167,7 @@ function checkMail(mail) {
     }
 
     if (!emailPattern.test(userMail.value)) {
-        alert("메일 형식을 지켜주세요! ex) abc@naver.com");
+        text(errorMsg[3], "메일 형식을 지켜주세요.");
         borderRed(mail);
         mail.value = "";
         mail.focus();
@@ -171,8 +182,9 @@ function checkNick(nick) {
         return false;
     }
     if (!nickPattern.test(userNick.value)) {
-        alert(
-            "숫자, 영어, 한국어와 언더스코어를 허용하며 최소 2자 이상의 닉네임"
+        text(
+            errorMsg[4],
+            "숫자, 영어, 한국어와 언더스코어를 허용하며 최소 2자이상 적어주세요."
         );
         borderRed(nick);
         nick.value = "";
