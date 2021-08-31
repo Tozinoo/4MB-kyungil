@@ -2,3 +2,8 @@ body {
     background-color: orange;
     color: white;
 }
+.header {
+    width: 100%;
+    height: 200px;
+    background-color: yellow;
+}
