@@ -3,8 +3,6 @@
   padding:0;
   box-sizing: border-box;
   font-family: 'Noto Sans KR', sans-serif;
-
-
 }
 ul{
   list-style: none;
@@ -12,6 +10,18 @@ ul{
 a{
   text-decoration: none;
 }
+
+/* 모바일 네비게이션 */
+.mob_img{
+  display:none;
+}
+.mob_nav_btn{
+  display:none;
+}
+.mob_nav{
+  display:none;
+}
+
 
 /* 헤더 영역 */
 header {
@@ -22,7 +32,7 @@ header {
   position: relative;
   max-width:1100px;
   margin:0 auto;
-  padding:0 2%;
+  padding:0;
   text-align: center;
 }
 .header_wrap{
@@ -82,20 +92,22 @@ h1.logo a img{
   padding:5px 0;
   line-height: 1;
   z-index: 3;
-  border-bottom:1px solid #fff;
+  border-top:1px solid rgb(233, 233, 233);
 }
 .nav_d1{
   display:inline-block;
   margin:0 20px 7px;
   height:25px;
+  letter-spacing: 2px;
+
 }
 .nav_d1_a{
   display:block;
   padding:10px 15px 3px;
-  color:#666;
+  color:rgb(49, 49, 49);
   line-height: 1;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
 }
 .nav_d2_box{
   display: none;
@@ -394,6 +406,7 @@ h1.logo a img{
 }
 .content.fac{
   padding-top:150px;
+  padding-bottom:60px;
 }
 .lounge{
 margin-top:70px;
@@ -432,7 +445,8 @@ left:0;
 }
 .cont_cell{
 display: table-cell;
-vertical-align: middle;
+padding-top:20px;
+/* vertical-align: middle; */
 }
 .cont_cell h3{
 border-bottom: 1px solid #c3bdb6;
@@ -441,7 +455,7 @@ font-size: 3.5em;
 font-weight: 500;
 }
 .cont_cell .sub_tit{
-margin: 64px 0 0;
+margin: 44px 0 0;
 color:#000;
 font-size: 46px;
 line-height: 65px;
