@@ -1,18 +1,20 @@
 // 정규표현식 선언
-var idPattern = /^[A-Za-z]{1}[A-Za-z0-9]{6,16}$/;
+var idPattern = /^[A-Za-z]{1}[A-Za-z0-9]{5,16}$/;
 var pwPattern = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
 var emailPattern =
     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{1,3}$/i;
 var phonePattern = /^01[016789]{1}-?([0-9]{4})-?([0-9]{4})$/;
 var nickPattern = /^[\w\Wㄱ-ㅎㅏ-ㅣ가-힣A-Za-z0-9]{2,20}$/;
+var namePattern = /^[가-힣]{2,5}$/;
 
 // 요소 가져오기
-const userId = document.getElementById("logo_id");
-const userPwd = document.getElementById("logo_pwd");
-const confirmUserPwd = document.getElementById("logo_confirmPwd");
-const userTel = document.getElementById("logo_tel");
-const userMail = document.getElementById("logo_mail");
-const userNick = document.getElementById("logo_nickName");
+const userId = document.getElementById("user_id");
+const userPwd = document.getElementById("user_pwd");
+const confirmUserPwd = document.getElementById("user_confirmPwd");
+const userName = document.getElementById('user_name');
+const userTel = document.getElementById("user_tel");
+const userMail = document.getElementById("user_mail");
+
 const errorMsg = document.getElementsByClassName("register-error-msg");
 
 // 텍스트 넣기
@@ -37,9 +39,24 @@ function checkValue(value, dataName) {
     return true;
 }
 
-// 생년월일 Date
+// 생년월일 Datepicker
 $(function () {
-    $("#user_date").datepicker();
+    $("#user_date").datepicker({
+        dateFormat : "yy-mm-dd",
+        prevText : "이전 달",
+        nextText : "다음 달",
+        monthNames : ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+        monthNamesShort : ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+        dayNames : ["일", "월", "화", "수", "목", "금", "토"],
+        dayNamesShort : ["일", "월", "화", "수", "목", "금", "토"],
+        dayNamesMin : ["일", "월", "화", "수", "목", "금", "토"],
+        showMonthAfterYear : true,
+        changeMonth : true,
+        changeYear : true,
+        yearSuffix : "년",
+        yearRange: "-100:+0",
+        maxDate : "+0D"
+    });
 });
 
 function check() {
@@ -54,14 +71,22 @@ function check() {
     borderReturn(confirmUserPwd);
     changeBlank(errorMsg[1]);
     console.log("비밀번호 확인");
+
+    if (!checkName(userName)) return false;
+    borderReturn(userName);
+    changeBlank(errorMsg[2]);
+    console.log("이름 확인");
+    
     if (!checkTel(userTel)) return false;
     borderReturn(userTel);
-    changeBlank(errorMsg[2]);
+    changeBlank(errorMsg[3]);
     console.log("전화번호 확인");
+
     if (!checkMail(userMail)) return false;
     borderReturn(userMail);
-    changeBlank(errorMsg[3]);
+    changeBlank(errorMsg[4]);
     console.log("메일 확인");
+
     if (!checkNick(userNick)) return false;
     borderReturn(userNick);
     changeBlank(errorMsg[4]);
@@ -83,7 +108,7 @@ function checkID(id) {
     // test 값이 false일 시 실행
     if (!idPattern.test(id.value)) {
         // 경고창 발생
-        text(errorMsg[0], "6 ~ 16자로 적어주세요.");
+        text(errorMsg[0], "6 ~ 16자 영어로 적어주세요.");
         borderRed(id);
         // value값 초기화
         id.value = "";
@@ -143,6 +168,23 @@ function checkPwd(pwd, confirmPwd) {
     return true;
 }
 
+function checkName(name) {
+    if (!checkValue(name.value, "이름을")) {
+        borderRed(name);
+        return false;
+    }
+
+    if (!namePattern.test(name.value)) {  
+        text(errorMsg[2], "2~5자 한글 이름을 적어주세요");
+        borderRed(name); 
+        name.value = ""; 
+        name.focus();
+        return false;
+    }
+    //
+    return true;
+}
+
 //전화번호 입력
 function checkTel(tel) {
     if (!checkValue(tel.value, "전화번호를")) {
@@ -151,7 +193,7 @@ function checkTel(tel) {
     }
 
     if (!phonePattern.test(tel.value)) {
-        text(errorMsg[2], "전화번호 형식을 지켜주세요.");
+        text(errorMsg[3], "전화번호 형식을 지켜주세요.");
         borderRed(tel);
         tel.value = "";
         tel.focus();
@@ -167,7 +209,7 @@ function checkMail(mail) {
     }
 
     if (!emailPattern.test(userMail.value)) {
-        text(errorMsg[3], "메일 형식을 지켜주세요.");
+        text(errorMsg[4], "메일 형식을 지켜주세요.");
         borderRed(mail);
         mail.value = "";
         mail.focus();
@@ -175,6 +217,8 @@ function checkMail(mail) {
     }
     return true;
 }
+
+// 삭제 예정
 // 닉네임 확인
 function checkNick(nick) {
     if (!checkValue(nick.value, "닉네임을")) {

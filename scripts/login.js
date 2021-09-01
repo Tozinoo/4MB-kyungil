@@ -16,5 +16,5 @@ btnLogin.addEventListener("click", function (e) {
 });
 
 btnRegister.addEventListener("click", function (e) {
-    window.location.href = "register.html";
+    window.location.href = "agreement.html";
 });

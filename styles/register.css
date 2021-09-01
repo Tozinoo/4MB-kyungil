@@ -13,7 +13,7 @@
     margin: 0 auto;
     text-align: center;
 }
-#register-user > img {
+#register-user >a> img {
     width: 75px;
     height: 75px;
 }
@@ -110,4 +110,19 @@
     padding: 6px;
     border-radius: 10px;
     color: white;
+}
+.gender{
+    width: 100px;
+}
+.register-notice{
+    margin-bottom: 10px;
+    height: 30px;
+}
+.register-notice > span{
+    float: right;
+    font-size: 0.8em;
+}
+.register-required{
+    margin-left: 2px;
+    font-size: 0.8em;
 }

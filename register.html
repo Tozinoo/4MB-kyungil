@@ -15,15 +15,19 @@
         <form name="form" method="post">
             <div class="register-container">
                 <div id="register-user">
-                    <img src="images/LOGO.png" alt="LOGO" />
+                    <a href="index.html"><img src="images/LOGO.png" alt="LOGO" /></a>
                     <p><h2>SurFaty 회원가입</h2></p>
                 </div>
                 <div id="register-article">
                     <div class="register-title">
                         <h2>계정 정보를 입력해 주세요.</h2>
                     </div>
+                    <div class='register-notice'>
+                        <span>(*)은 필수사항입니다.</span>
+                        
+                    </div>
 
-                    <strong class="register-tf">아이디</strong>
+                    <strong class="register-tf">아이디</strong><span class='register-required'>*</span>
                     <div class="register-subtitle">
                         <label for="user_id" class="register-lab"></label>
                         <input
@@ -32,6 +36,7 @@
                             id="user_id"
                             placeholder="아이디 입력"
                             name="userId"
+                            required
                         />
                         <div class='register-error-msg'></div>
                         <div class="register-util">
@@ -44,7 +49,7 @@
                         </div>
                     </div>
 
-                    <strong class="register-tf">비밀번호</strong>
+                    <strong class="register-tf">비밀번호</strong><span class='register-required'>*</span>
                     <div class="register-subtitle">
                         <label for="user_pwd" class="register-lab"></label>
                         <input
@@ -53,6 +58,7 @@
                             id="user_pwd"
                             placeholder="비밀번호 입력 (8~16자리)"
                             name="userPwd"
+                            required
                         />
                         <div class='register-error-msg'></div>
                         <input
@@ -61,12 +67,13 @@
                             id="user_confirmPwd"
                             placeholder="비밀번호 재입력"
                             name="confirmUserPwd"
+                            required
                         />
                         <div style="height: 15px;"></div>
                         <div class="register-util"></div>
                     </div>
 
-                    <strong class="register-tf">이름</strong>
+                    <strong class="register-tf">이름</strong><span class='register-required'>*</span>
                     <div class="register-subtitle">
                         <label for="user_name" class="register-lab"></label>
                         <input
@@ -75,6 +82,7 @@
                             id="user_name"
                             placeholder="이름 입력"
                             name="userName"
+                            required
                         />
                         <div class='register-error-msg'></div>
                         <div class="register-util">
@@ -90,13 +98,12 @@
                             id="user_date"
                             placeholder="생년월일"
                             name="userDate"
-                        />
-                        <div class='register-error-msg'></div>
+                        />                        
                         <div class="register-util">
                         </div>
                     </div>
 
-                    <strong class="register-tf">전화번호</strong>
+                    <strong class="register-tf">전화번호</strong><span class='register-required'>*</span>
                     <div class="register-subtitle">
                         <label for="user_tel" class="register-lab"></label>
                         <input
@@ -105,6 +112,7 @@
                             id="user_tel"
                             placeholder="전화번호 입력"
                             name="userTel"
+                            required
                         />
                         <div class='register-error-msg'></div>
                         
@@ -119,7 +127,7 @@
                         </div>
                     </div>
 
-                    <strong class="register-tf">이메일</strong>
+                    <strong class="register-tf">이메일</strong><span class='register-required'>*</span>
                     <div class="register-subtitle">
                         <label for="user_mail" class="register-lab"></label>
                         <input
@@ -128,6 +136,7 @@
                             id="user_mail"
                             placeholder="이메일 입력"
                             name="userMail"
+                            required
                         />
                         <div class='register-error-msg'></div>
                         <div class="register-util">
@@ -141,16 +150,24 @@
                     </div>
 
                     <strong class="register-tf">성별</strong>
-                    <div class="register-subtitle">
-                        <label for="user_sex" class="register-lab"></label>
+                    <div class="register-subtitle" style="margin-top: 10px;margin-bottom: 60px;">
+                        <label for="user_male" class="register-lab">남</label>
                         <input
-                            class="register-input"
-                            type="text"
-                            id="user_sex"
-                            placeholder="성별"
-                            name="userSex"
+                            class="register-input gender"
+                            type="radio"
+                            id="user_male"
+                            name="userGender"
+                            style="width:15px;height:15px;"
                         />
-                        <div class='register-error-msg'></div>
+                        <label for="user_female" class="register-lab">여</label>
+                        <input
+                            class="register-input gender"
+                            type="radio"
+                            id="user_female"
+                            name="userGender"
+                            style="width:15px;height:15px;"
+                        />
+                        
                         <div class="register-util">
                         </div>
                     </div>
