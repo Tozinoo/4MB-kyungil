@@ -4,16 +4,16 @@ var pwPattern = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
 var emailPattern =
     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{1,3}$/i;
 var phonePattern = /^01[016789]{1}-?([0-9]{4})-?([0-9]{4})$/;
-var nickPattern = /^[\w\Wㄱ-ㅎㅏ-ㅣ가-힣A-Za-z0-9]{2,20}$/;
 var namePattern = /^[가-힣]{2,5}$/;
 
 // 요소 가져오기
 const userId = document.getElementById("user_id");
 const userPwd = document.getElementById("user_pwd");
 const confirmUserPwd = document.getElementById("user_confirmPwd");
-const userName = document.getElementById('user_name');
+const userName = document.getElementById("user_name");
 const userTel = document.getElementById("user_tel");
 const userMail = document.getElementById("user_mail");
+const btnSubmit = document.getElementById("submit_all");
 
 const errorMsg = document.getElementsByClassName("register-error-msg");
 
@@ -42,22 +42,50 @@ function checkValue(value, dataName) {
 // 생년월일 Datepicker
 $(function () {
     $("#user_date").datepicker({
-        dateFormat : "yy-mm-dd",
-        prevText : "이전 달",
-        nextText : "다음 달",
-        monthNames : ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-        monthNamesShort : ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-        dayNames : ["일", "월", "화", "수", "목", "금", "토"],
-        dayNamesShort : ["일", "월", "화", "수", "목", "금", "토"],
-        dayNamesMin : ["일", "월", "화", "수", "목", "금", "토"],
-        showMonthAfterYear : true,
-        changeMonth : true,
-        changeYear : true,
-        yearSuffix : "년",
+        dateFormat: "yy-mm-dd",
+        prevText: "이전 달",
+        nextText: "다음 달",
+        monthNames: [
+            "1월",
+            "2월",
+            "3월",
+            "4월",
+            "5월",
+            "6월",
+            "7월",
+            "8월",
+            "9월",
+            "10월",
+            "11월",
+            "12월",
+        ],
+        monthNamesShort: [
+            "1월",
+            "2월",
+            "3월",
+            "4월",
+            "5월",
+            "6월",
+            "7월",
+            "8월",
+            "9월",
+            "10월",
+            "11월",
+            "12월",
+        ],
+        dayNames: ["일", "월", "화", "수", "목", "금", "토"],
+        dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"],
+        dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+        showMonthAfterYear: true,
+        changeMonth: true,
+        changeYear: true,
+        yearSuffix: "년",
         yearRange: "-100:+0",
-        maxDate : "+0D"
+        maxDate: "+0D",
     });
 });
+
+form.addEventListener("submit", (e) => e.preventDefault()); // 새로고침(submit) 되는 것 막음
 
 function check() {
     // checkID값이 false일 시 return false로 함수 중지
@@ -76,7 +104,7 @@ function check() {
     borderReturn(userName);
     changeBlank(errorMsg[2]);
     console.log("이름 확인");
-    
+
     if (!checkTel(userTel)) return false;
     borderReturn(userTel);
     changeBlank(errorMsg[3]);
@@ -87,10 +115,7 @@ function check() {
     changeBlank(errorMsg[4]);
     console.log("메일 확인");
 
-    if (!checkNick(userNick)) return false;
-    borderReturn(userNick);
-    changeBlank(errorMsg[4]);
-    console.log("닉네임 확인");
+    $("#register-form").submit();
     return true;
 }
 
@@ -174,10 +199,10 @@ function checkName(name) {
         return false;
     }
 
-    if (!namePattern.test(name.value)) {  
+    if (!namePattern.test(name.value)) {
         text(errorMsg[2], "2~5자 한글 이름을 적어주세요");
-        borderRed(name); 
-        name.value = ""; 
+        borderRed(name);
+        name.value = "";
         name.focus();
         return false;
     }
@@ -213,26 +238,6 @@ function checkMail(mail) {
         borderRed(mail);
         mail.value = "";
         mail.focus();
-        return false;
-    }
-    return true;
-}
-
-// 삭제 예정
-// 닉네임 확인
-function checkNick(nick) {
-    if (!checkValue(nick.value, "닉네임을")) {
-        borderRed(nick);
-        return false;
-    }
-    if (!nickPattern.test(userNick.value)) {
-        text(
-            errorMsg[4],
-            "숫자, 영어, 한국어와 언더스코어를 허용하며 최소 2자이상 적어주세요."
-        );
-        borderRed(nick);
-        nick.value = "";
-        nick.focus();
         return false;
     }
     return true;
