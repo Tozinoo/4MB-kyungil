@@ -1,0 +1,45 @@
+
+.first, .second, .third{
+    list-style: none;
+    box-sizing: border-box;
+    border: solid 4px cornflowerblue;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.first{
+    position: fixed;
+    right: 30px;
+    bottom: 250px;
+}
+.second{
+    position: fixed;
+    right: 30px;
+    bottom: 150px;
+}
+.third{
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+}
+.location{
+    padding: 19px;
+    font-size: 47px;
+    color: cornflowerblue;
+}
+.tt{
+    padding: 11px;
+    font-size: 47px;
+    color: cornflowerblue;
+}
+.top{
+    padding: 16px;
+    font-size: 47px;
+    color: cornflowerblue;
+}
+a:link, a:visited{
+    text-decoration-line: none;
+    color: cornflowerblue;
+}
