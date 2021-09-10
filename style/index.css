@@ -1,0 +1,854 @@
+@font-face {
+
+  src : url("../fonts/GowunBatang-Regular.ttf");
+  font-family: "GowunBatang"
+
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+body{
+  overflow-x: hidden;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  
+}
+
+/* 애니메이션 */
+.animate{
+  animation: fadeIn 2s forwards ease-in;
+  transition: 4s ease-in-out;
+}
+@keyframes fadeIn{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.cont_cell .animate{
+  transform: translateX(14em);
+}
+
+
+
+/* 모바일 네비게이션 */
+.mob_img{
+  display:none;
+}
+.mob_nav_btn{
+  display:none;
+}
+.mob_nav{
+  display:none;
+}
+
+
+/* 헤더 영역 */
+header {
+  background-color:#fff;
+  position: relative;
+  z-index: 1;
+} 
+.cont_wrap{
+  position: relative;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0;
+  text-align: center;
+}
+.header_wrap{
+  height:78px;
+}
+h1.logo{
+  position: absolute;
+  display:table;
+  width:30%;
+  height:100%;
+  left:35%;
+}
+h1.logo a{
+  display:table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+h1.logo a img{
+  width:166px;
+}
+.header_links{
+  position:absolute;
+  top:16px;
+  right:0;
+  text-align: right;
+}
+.header_links a{
+  position:relative;
+  display: inline-block;
+  height:13px;
+  margin-left: 0.2em;
+  margin-right:0.2em;
+  padding:1px 8px 0 10px;
+  font-size: 11px;
+  line-height: 1.1;
+}
+.header_links a:after{
+  content:"";
+  position:absolute;
+  top:1px;
+  right:-4px;
+  height:12px;
+  width:1px;
+  display:block;
+  background-color:#eee;
+}
+
+
+/* 네비게이션 바  */
+.gnb{
+  position:relative;
+  z-index: 2;
+  background-color: #fff;
+  border-top:1px solid black;
+  border-bottom: 1px solid rgb(218, 218, 218);
+
+}
+.gnb_menu{
+  position:relative;
+  padding:5px 0;
+  line-height: 1;
+  z-index: 3;
+}
+.nav_d1{
+  display:inline-block;
+  margin:0 20px 7px;
+  height:25px;
+  letter-spacing: 2px;
+
+}
+.nav_d1_a{
+  display:block;
+  padding:10px 15px 3px;
+  color:rgb(49, 49, 49);
+  line-height: 1;
+  font-size: 15px;
+  font-weight: 400;
+}
+.hoverEft{
+  padding-bottom:11px;
+  border-bottom: 2px solid #b17c5c;
+}
+
+.nav_d2_box{
+  display: none;
+  position: absolute;
+  top:43px;
+  left:0;
+  z-index: 10;
+  width:100%;
+  padding:4px 0;
+  transition: all .4s;
+}
+.nav_d2{
+  display: inline-block;
+}
+.nav_d2_a{
+  display:block;
+  padding:5px 15px;
+  color:#aaa;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+
+
+
+/* 메인 슬라이더 영역 시작*/
+.visual{
+  position:relative;
+  max-width:1920px;
+  margin:0 auto;
+  z-index: 0;
+}
+.visual_wrap{
+  position: relative;
+  z-index: 0;
+  height:900px;
+}
+.visu_slide{
+  position: absolute;
+  width:100%;
+  height:100%;
+  opacity: 0;
+  background-size:cover;
+  background-position: 50% 0;
+  transition:opacity 0.5s;
+}
+.visu_slide:nth-child(1){
+  background-image:url('https://i.esdrop.com/d/cl3pewp2aooj/Uj2FkEgTUG.jpg');
+}
+.visu_slide:nth-child(2){
+  background-image:url('https://i.esdrop.com/d/cl3pewp2aooj/DLTbJVlBhZ.jpg');
+}
+.visu_slide:nth-child(3){
+  background-image:url('https://i.esdrop.com/d/cl3pewp2aooj/nzjLQkQn4r.jpg');
+}
+.visu_veil{
+  position: absolute;
+  width:0;
+  /* width:44%; */
+  height:100%;
+  right:0;
+  z-index: 0;
+}
+.visu_slide:nth-child(1) .visu_veil{
+  background-color: rgba(28,19,36,0.4);
+}
+.visu_slide:nth-child(2) .visu_veil{
+  background-color: rgba(64,35,3,0.4);
+}
+.visu_slide:nth-child(3) .visu_veil{
+  background-color: rgba(64,67,70,0.5);
+}
+.arr{
+  position: absolute;
+  top:55%;
+  margin-top:-29px;
+  width:30px;
+  height: 58px;
+  background-position: 0 0;
+  text-indent: -9999px;
+  z-index: 2;
+  background-repeat: no-repeat;
+  opacity:0.5;
+}
+.arr:hover{
+  opacity:1;
+}
+
+.visual .arr{
+  border:none;
+}
+.arr.left{
+  left:20px;
+  background-image:url('https://i.esdrop.com/d/cl3pewp2aooj/lu5D8jYZDJ.png');
+}
+.arr.right{
+  right:20px;
+  background-image:url('https://i.esdrop.com/d/cl3pewp2aooj/XsPzjJzSV1.png');
+}
+.visu_txt_wrap{
+  position: absolute;
+  z-index: 1;
+  right:0;
+  width:44%;
+  height:100%;
+  opacity: 0;
+}
+.visu_txt_cont{
+  display:table;
+  width:550px;
+  height: inherit;
+  color:#fff;
+  text-align: right;
+}
+.visu_txt_cont_cell{
+  display:table-cell;
+  vertical-align: middle;
+}
+.visu_tit{
+  font-size: 5em;
+    line-height: 54px;
+}
+.visu_txt_sub01{
+  font-size: 2em;
+}
+.visu_txt_sub02{
+  margin:46px 0 0;
+  font-size: 2.5em;
+}
+.visu_btn_wrap{
+  margin-top:30px;
+}
+.visu_btn_wrap .btn_view{
+  display: inline-block;
+  width:132px;
+  height:38px;
+  border:1px solid #fff;
+  margin-left: 10px;
+  color:#fff;
+  text-align: center;
+  line-height: 38px;
+}
+.visu_btn_wrap .btn_view:hover{
+  background-color:rgba(255,255,255,0.2);
+}
+.slide_btm_wrap{
+  position: absolute;
+  bottom:24px;
+  text-align: center;;
+  width:100%;
+}
+.slide_btm_wrap li{
+  display:inline-block;
+  margin:0 5px;
+}
+.slide_btm_wrap li a{
+  display:block;
+  width:10px;
+  height:10px;
+  background-color: #fff;
+  text-indent:-9999px;
+  border-radius: 10px;
+}
+
+/* .Active class가 붙으면서 나옴 */
+.visu_slide.Active{
+  opacity: 1;
+}
+.slide_btm_wrap li.Act a{
+  width:25px;
+}
+.controls_wrap .control {
+  width:10px;
+  height:10px;
+  background-position: 0 0;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+}
+.controls_wrap .control.start {
+  display:none;
+  background-image: url('https://i.esdrop.com/d/cl3pewp2aooj/oWmeZMKsML.png');
+}
+.controls_wrap .control.stop {
+  background-image: url('https://i.esdrop.com/d/cl3pewp2aooj/szGisw1b72.png');
+}
+/* 메인 슬라이더 영역 끝 */
+
+
+
+/* 이벤트 프로모션 영역 시작 */
+#eventBox{
+  width: 1440px;
+  height: 100%;
+  margin: 150px auto 100px ;
+}
+.wrap_about_us{
+  width: 100%;
+  height: 850px;
+}
+.us_box01{
+    width: 950px;
+    height: 360px;
+    float: left;
+    position: relative;
+    z-index: 0;
+}
+.us_box01_bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  content: "";
+}
+.us_box01 img{
+  height:360px;
+  width:950px;
+}
+.us_box01 h2{
+  position: absolute;
+  top: 65px;
+  left: 55px;
+  color: #eee;
+  z-index: 2;
+  font-size: 2.7em;
+}
+.us_box01 p{
+  position: absolute;
+  top: 150px;
+  left: 55px;
+  color: #eee;
+  z-index: 2;
+  font-size: 1.7em;
+  font-weight: 300;
+  letter-spacing: 0;
+}
+.us_box02{
+    width: 460px;
+    height: 360px;
+    background-color: rgba(250,237,229, 0.5);
+    float: right;
+    text-align: center;
+    border-radius: 0 100px 0 0;
+}
+.us_box02 h2{
+  margin: 65px 0 50px;
+  font-size: 22px;
+  color: #5f422f;
+}
+.box02_p{
+  font-size: 1.7em;
+  margin-bottom: 18px;
+  color: #5f422f;
+}
+.news_letter{
+    margin: 50px auto 0;
+    width: 280px;
+    height: 50px;
+    font-size: 1.5em;
+    letter-spacing: 0;
+}
+.news_letter a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    background-color: #997054;
+    color: white !important;
+    border-radius: 25px;
+  }
+.news_letter a:hover{
+  font-weight: bold;
+}
+.us_box3{
+    position: relative;
+    width: 460px;
+    height: 460px;
+    float: left;
+    margin-top: 30px;
+    border-radius: 0 0 0 100px;
+    overflow: hidden;
+}
+.us_box3_hoverEft{
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+}
+.us_box3_hoverEft p{
+  width:100%;
+  height:100%;
+  text-align: center;
+  margin: 210px auto;
+  font-size: 20px;
+  color:white;
+  line-height: 2;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.us_box3:hover .us_box3_hoverEft{
+  display: block;
+}
+.us_box4{
+    width: 460px;
+    height: 460px;
+    float: left;
+    margin: 30px 30px 0;
+}
+.us_box4_hoverEft{
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+}
+.us_box4_hoverEft p{
+  width:100%;
+  height:100%;
+  text-align: center;
+  margin: 210px auto;
+  font-size: 20px;
+  color:white;
+  line-height: 2;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.us_box4:hover .us_box4_hoverEft{
+  display: block;
+}
+.us_box5{
+    width: 460px;
+    height: 460px;
+    float: left;
+    margin-top: 30px;
+}
+.us_box5_hoverEft{
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+}
+.us_box5_hoverEft p{
+  width:100%;
+  height:100%;
+  text-align: center;
+  margin: 210px auto;
+  font-size: 20px;
+  color:white;
+  line-height: 2;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.us_box5:hover .us_box5_hoverEft{
+  display: block;
+}
+/* 이벤트 프로모션 영역 끝 */
+
+
+
+
+
+
+
+
+
+/* room 카테고리 시작 */
+.content{
+  width:1440px;
+  margin:0 auto;
+  padding-top:40px;
+}
+.recommend{
+  position: relative;
+  margin-top:100px;
+}
+.cont_title{
+  padding-bottom: 64px;
+    color: #202020;
+    font-weight: normal;
+    font-size: 2em;
+    text-align: center;
+}
+.recom_tab{
+  width:762px;
+  height:42px;
+  margin:0 auto 25px;
+}
+.recom_tab .btn_tab{
+  display:block;
+  float:left;
+  width:calc(100% / 3);
+  text-align: center;
+  font-size: 17px;
+  line-height: 42px;
+  border-bottom:2px solid #e6e6e6;
+}
+.recom_tab .btn_tab.Act{
+  color:#b17c5c;
+  font-weight: bold;
+  border-bottom:2px solid #b17c5c;
+}
+.recom_list_wrap{
+  position: relative;
+  height: 434px;
+}
+.recom_list{
+  height:434px;
+  width:100%;
+  display:none;
+}
+.recom_list.On{
+  display:block;
+}
+.recom_list li{
+  width:25%;
+  float:left;
+  position: relative;
+  padding:34px 35px 0;
+}
+.recom_img img {
+  width:290px;
+}
+.recom_name{
+  padding:0 0 25px;
+  color:#333;
+  font-size: 18px;
+  letter-spacing: -0.1em;
+  text-align: center;
+}
+.buy_view_layer{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(242,242,242,0.5);
+  display: none;
+}
+.recom_list li:hover .buy_view_layer{
+  display:table;
+}
+.buy_view_inner{
+  display:table-cell;
+  width:100%;
+  height:100%;
+  vertical-align: middle;
+  text-align: center;
+}
+.buy_view_layer .btn_view{
+  display:block;
+  width:178px;
+  height:38px;
+  margin:0 auto;
+  border:1px solid #555;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 38px;
+  background-color: #fff;
+}
+.buy_view_layer .btn_view.black{
+  margin-top:9px;
+  background-color: #555;
+  color:#fff
+}
+
+/* room하단 컨텐츠 영역 */
+.roomBtm{
+  width:100%;
+}
+.comment{
+  background-image: url('https://i.esdrop.com/d/cl3pewp2aooj/gZiCin6RVa.jpg');
+  text-align: center;
+  height:554px;
+  padding:80px;
+}
+.comment p, .comment span{
+  color:white;
+  font-size: 2em;
+  font-family:'GowunBatang';
+}
+.comment p{
+  padding-top:90px;
+  font-size: 6em;
+  letter-spacing: 60px;
+
+}
+.photoBox{
+  width:1920px;
+  margin:20px auto;
+  margin-bottom:0;
+  background:url('https://i.esdrop.com/d/cl3pewp2aooj/A2qTOUKl5x.jpg') no-repeat;
+  height:2140px;
+}
+.photoBox p{
+  position: relative;
+  left:435px;
+  top:870px;
+  font-size: 1.7em;
+  font-family: "GowunBatang";
+  font-weight: 500;
+  letter-spacing: -1px;
+  
+}
+.photoBox p:first-child{
+  color:#a0836d;
+  font-size: 1.9em;
+  font-weight: 600;
+  margin-bottom: 15px;
+
+
+}
+
+/* room 영역 끝 */
+
+
+
+
+/* 게스트하우스 소개, 부대시설 부분 시작 */
+.aboutUsBg{
+  background: url('https://i.esdrop.com/d/cl3pewp2aooj/GhTR7Y5YEN.jpg') no-repeat;
+  background-position: top center;
+  text-align: center;
+  margin:0 auto;
+  height:850px;
+}
+.aboutUsBg div{
+  position: relative;
+  top:120px;
+}
+.aboutUsBg div p{
+  color:white;
+  font-size: 2em;
+  font-family: "GowunBatang";
+  width:1440px;
+  height: 600px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 25px;;
+  margin:0 auto;
+  line-height: 2;
+  padding-top:110px;
+}
+.facility{
+  text-align: center;
+  font-size: 3em;
+  font-weight: 400;
+  padding-top:100px;
+  color:rgb(80, 80, 80);
+
+}
+
+.content.fac{
+  padding-top:50px;
+  padding-bottom:60px;
+}
+.lounge{
+margin-top:70px;
+padding:0 90px;
+height:450px;
+}
+.lounge_cont{
+position: relative;
+height: 100%;
+}
+.cont_table{
+display: table;
+position: absolute;
+left:0;
+width:100%;
+top:0;
+height: 100%;
+}
+.lou01  .cont_table{
+padding-right:718px;
+text-align: right;
+}
+.lou02  .cont_table{
+padding-left:718px;
+}
+.lounge_img{
+position: absolute;
+top:0;
+}
+.lou01 .lounge_img{
+right:0;
+padding-left:50px;
+}
+.lou02 .lounge_img{
+left:0;
+}
+.cont_cell{
+display: table-cell;
+padding-top:20px;
+/* vertical-align: middle; */
+}
+.cont_cell h3{
+border-bottom: 1px solid #c3bdb6;
+color: #6a481b;
+font-size: 3.5em;
+font-weight: bold;
+font-family: "GowunBatang";
+}
+.cont_cell .sub_tit{
+margin: 44px 0 0;
+color:#000;
+font-size: 46px;
+line-height: 65px;
+}
+.cont_cell .desc {
+margin: 40px 0 50px;
+  color: rgb(99, 99, 99);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 300;
+}
+.cont_cell .btn_view {
+display: inline-block;
+height: 38px;
+padding:0 44px;
+border:1px solid #555;
+color:#555;
+font-weight: bold;
+font-size: 15px;
+line-height: 38px;
+}
+/* 게스트하우스 소개, 부대시설 부분  끝*/
+
+
+/* footer 부분 */
+footer{
+  border-top:1px solid #eee;
+  background-color: white;
+  padding-top:28px;
+  padding-bottom:30px;
+  font-size: 1.3em;
+  letter-spacing: 0.03em;
+}
+/* .footer_links{
+  border-bottom:1px solid #eee;
+} */
+.footer_link_left{
+  float:left;
+}
+.footer_link_left .footer_item{
+  display: inline-block;
+  margin-right:1.5em;
+  line-height: 48px;
+}
+.footer_mark{
+  float: center;
+}
+.footer_mark li{
+  display: inline-block;
+  padding-right:10px;
+  padding-bottom:16px;
+}
+.footer_mark li:last-child{
+  padding-right:0;
+}
+.footer_mark li a{
+  display: block;
+  font-size: 1.5em;
+  color:#b2b2b2;
+  line-height: 48px;
+}
+.footer_mark li a img{
+  height: 37px;
+  vertical-align: middle;
+}
+
+.footer_legal .footer_item{
+  margin-bottom:6px;
+  padding:0 8px;
+  color:#767676;
+  font-size: 13px;
+  line-height: 20px;
+  border-right:1px solid #eee;
+}
+.footer_legal .copyright{
+  font-weight: bold;
+}
+.footer_legal .copyright, .footer_item:last-child{
+  border-right:none;
+}
+
+.footer_legal .footer_item.company{
+  border-left:none;
+
+}
+
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+@keyframes spin {
+  0% {transform:translate(-50%,-50%) rotate(0deg); }
+  100% {transform:translate(-50%,-50%) rotate(360deg); }
+}
