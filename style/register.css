@@ -1,0 +1,137 @@
+.register-tf {
+    color: black;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+.register-container {
+    width: 100%;
+    padding: 20px 0;
+}
+#register-user {
+    width: 580px;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+#register-user > .register-top-title {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+#register-user > .register-top-title-register {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#register-user > a > img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+#register-article {
+    width: 640px;
+    height: 100%;
+    margin: 25px auto 100px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    padding: 50px 50px;
+}
+
+.register-title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    margin-bottom: 40px;
+    color: rgb(58, 58, 58);
+}
+
+.register-subtitle {
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(58, 58, 58);
+    margin-bottom: 25px;
+}
+.register-error-msg {
+    width: 100%;
+    height: 15px;
+    line-height: 15px;
+    color: red;
+    font-size: 11px;
+}
+
+.register-input {
+    height: 40px;
+    width: 100%;
+    display: inline-block;
+    font-size: 1em;
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid #cccccc;
+    line-height: 40px;
+    margin-top: 5px;
+}
+/* focus 됐을 시 밑줄 진하게 */
+.register-input:focus {
+    outline: none;
+    border-bottom: 2px solid black;
+}
+/* focus됐을 시 placeholder 값 투명하게 변경 */
+.register-input:focus::placeholder {
+    color: transparent;
+}
+.date {
+    width: 140px;
+    text-align: center;
+    border: 2px solid #cccccc;
+    margin-top: 13px;
+}
+.register-subtitle {
+    position: relative;
+}
+
+.register-util {
+    position: absolute;
+    right: 3px;
+    top: 10px;
+    bottom: 0;
+}
+
+.register-btn-input {
+    font-size: 1em;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
+
+.register-submit {
+    text-align: center;
+}
+
+#submit_all {
+    width: 80%;
+    height: 45px;
+    font-size: 1.3em;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 10px;
+    color: white;
+}
+.gender {
+    width: 100px;
+}
+.register-notice {
+    margin-bottom: 10px;
+    height: 30px;
+}
+.register-notice > span {
+    float: right;
+    font-size: 0.8em;
+}
+.register-required {
+    margin-left: 2px;
+    font-size: 0.8em;
+}

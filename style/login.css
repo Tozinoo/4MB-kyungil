@@ -1,0 +1,119 @@
+/* 전체 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+}
+#login-container {
+    margin-top: 100px;
+}
+
+#login-container > form > .login-img {
+    display: inline-block;
+    width: 500px;
+    height: 100%;
+    padding-right: 0;
+    background: url("https://i.esdrop.com/d/cl3pewp2aooj/dQA2QjUS93.jpg")
+        no-repeat;
+    background-size: contain;
+
+    /* margin-left: ; 70px*/
+}
+
+#login-container > form > .login-img > a > p {
+    margin-bottom: 20px;
+}
+#login-container > form > .login-form {
+    float: right;
+    width: 45%;
+    border: 1px solid #bbb;
+    padding: 60px 50px;
+    max-width: 450px;
+}
+
+#login-container > form {
+    text-align: center;
+    margin: 30px auto 0;
+    padding: 20px;
+    width: 80%;
+    max-width: 1120px;
+    min-width: 1120px;
+}
+.login-input-box {
+    position: relative;
+    margin: 20px 0;
+}
+.login-input-box > input {
+    background: transparent;
+    border: none;
+    border-bottom: solid 1px #bbb;
+    padding: 30px 0px 5px 0px;
+    font-size: 1.3em;
+    width: 100%;
+}
+/* input 투명하게 */
+input::placeholder {
+    color: transparent;
+}
+/* focus시 변경 */
+input:focus + label,
+label {
+    color: #888888;
+    font-size: 1em;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transition: all 0.2s ease;
+}
+
+button {
+    cursor: pointer;
+}
+.login-btn-items {
+    padding-top: 70px;
+    position: relative;
+}
+.login-find {
+    border: none;
+    background: transparent;
+    color: #999999;
+}
+#login-findId {
+    position: absolute;
+    top: 0;
+    right: 100px;
+    border-right: 1px solid #bbb;
+    padding-right: 13px;
+}
+#login-findPassword {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#login-findPassword:hover,
+#login-findId:hover {
+    color: black;
+}
+.login-btn {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: 40px;
+    border: none;
+    margin: 15px auto;
+    border-radius: 10px;
+    color: white;
+    background: #b17c5c;
+    font-weight: bold;
+    font-size: 1em;
+}
+.login-btn:hover {
+    color: white;
+    background: #c46a32;
+}
+
+#login-container > form {
+    height: 540px;
+    margin-bottom: 100px;
+}

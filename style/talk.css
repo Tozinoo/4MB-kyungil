@@ -1,0 +1,87 @@
+.tk-first,
+.tk-second,
+.tk-third,
+.tk-fourth {
+    list-style: none;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 3px slategrey;
+    background-color: #b17c5c;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.tk-first {
+    position: fixed;
+    right: 50px;
+    bottom: 260px;
+}
+
+.tk-second {
+    position: fixed;
+    right: 50px;
+    bottom: 190px;
+}
+
+.tk-third {
+    position: fixed;
+    right: 50px;
+    bottom: 120px;
+}
+
+.tk-fourth {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+
+.tk-location {
+    padding: 15px;
+    font-size: 28px;
+    color: white;
+    line-height: 50px;
+}
+.tk-call {
+    padding: 16px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    line-height: 47px;
+}
+.tk-tt {
+    padding: 10px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    line-height: 46px;
+}
+.tk-top {
+    padding: 13px;
+    font-size: 28px;
+    color: white;
+    line-height: 50px;
+}
+.tk-loc-text {
+    opacity: 0;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 7%;
+}
+.tk-cl-text {
+    opacity: 0;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 7%;
+}
+.tk-tt-text {
+    opacity: 0;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 5%;
+}
+.tk-top-text {
+    opacity: 0;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 5%;
+}
