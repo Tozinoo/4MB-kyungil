@@ -1,4 +1,5 @@
 # 프로젝트 명 : SurFaty 
+![onedayclass_db](https://i.esdrop.com/d/cl3pewp2aooj/BoJzdWpiee.png)
 
 ### 프로젝트 목표 : 제주도 게스트 하우스 숙소 예약 페이지 제공
 
@@ -34,10 +35,5 @@
     -   영상 삽입
 #### 마이페이지
     -   회원정보 수정, 예약한 숙소 관리
-
-
-
-
-
 
 
