@@ -10,7 +10,7 @@
 
 ## 1. 개요
 제주도 게스트 하우스 숙소 예약 페이지 제공 플랫폼
-https://docs.google.com/presentation/d/1IxPvFnDr-w16fu4hFnYYFvnjBGHSUqSS/edit#slide=id.p1
+![기획안](https://docs.google.com/presentation/d/1IxPvFnDr-w16fu4hFnYYFvnjBGHSUqSS/edit#slide=id.p1)
 
 
 ## 2. 사용기술 
